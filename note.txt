@@ -1,0 +1,14 @@
+ <title>My p5.js Sketch</title> -> Tên xuất hiện trên web
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My p5.js Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+    <script src="sketch.js"></script>
+  </head> -> Thông tin cơ bản của webweb
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script> -> Cài p5 phiên bản mới nhất (Có thể copy từ p5.editor qua thì trên đây sẽ tự update) 
+
+<script src="sketch.js"></script> -> Cái này là chỗ sketch p5 chạy, Nếu đổi tên ngay sketch.js -> Click chuột phải -> Copy relative path -> Thay đổi đường dẫn, không còn là sketch.js nữa mà sẽ là tên khác
+
