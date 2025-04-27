@@ -10,7 +10,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(windowWidth, windowHeight);
     gallery = [img1, img2, img3, img4]; //Xuống đây mới bỏ item dô Array nè
      //Resize hinh
     img1.resize(0, 200); //resize nên đặt ở ngay setup
@@ -23,7 +23,7 @@ function draw() {
 background(0);
 
 imageMode(CENTER);
-image(gallery[index % gallery.length], 200, 200);
+image(gallery[index % gallery.length], windowWidth/2, windowHeight/2);
 // circle(100, 100, 100);
 }
 
