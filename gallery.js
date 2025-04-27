@@ -24,6 +24,7 @@ background(0);
 
 imageMode(CENTER);
 image(gallery[index % gallery.length], 200, 200);
+circle(100, 100, 100);
 }
 
 // //Đổi hình khi click chuột
