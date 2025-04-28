@@ -22,7 +22,8 @@ function draw() {
 
     for (let i=0; i<points.length; i = i+1) {
         let distance = dist(mouseX, mouseY, points[i].x, points[i].y);
-    size = map(distance, 0, 200, 80, 0); //tại mỗi điểm của chữ thì vẽ 1 cái circle
+        size = map(distance, 0, 200, 80, 0); //Effect cho chữ, càng lia chuột gần thì hình tròn càng to
+    //tại mỗi điểm của chữ thì vẽ 1 cái circle
         circle(points[i].x, points[i].y, size); //Để gọi toạ độ x, y ra thì array[].x và array[].y
     }
 
