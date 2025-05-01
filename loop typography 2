@@ -1,27 +1,29 @@
 let font;
-let points = [];
-let size = 0;
+let points; 
+let size=0;
 
 function preload() {
-    font = loadFont("nhin-minh/assets/1. Font/IBMPlexMono-Medium.ttf");
-}
+    font = loadFont("assets/1. Font/IBMPlexMono-Medium.ttf");
+ }
 
 function setup() {
-    createCanvas(400, 400);
-    points = font.textToPoints("languised", 0, height/2, 200, {
+    createCanvas(500, 500);
+    points = font.textToPoints("nlbh", 0, height/2, 200, { //trong ngoặc lần lượt là ("text", x, y, size chữ)
         sampleFactor: 0.3,
-        simplifyThresold: 0
+        simplifyThreshold: 0
     });
 }
 
 function draw() {
-    background(0);
-    for(let i=0; i<points.length; i=i+1) {
-        let distance = dist(mouseX, mouseY, points[i].x, points[i].y);
-        size = map(dist, 0, 200, 80, 0);
+    background(250);
+    //points là 1 array tập hợp của các điểm tạo nên chữ "nlbh"
 
-        noStroke();
-        fill(255);
-        circle(points[i].x, points[i].y, 20);
+    
+
+    for (let i=0; i<points.length; i = i+1) {
+        let distance = dist(mouseX, mouseY, points[i].x, points[i].y);
+        size = map(distance, 0, 200, 80, 0); //Effect cho chữ, càng lia chuột gần thì hình tròn càng to
+    //tại mỗi điểm của chữ thì vẽ 1 cái circle
+        circle(points[i].x, points[i].y, size); //Để gọi toạ độ x, y ra thì array[].x và array[].y
     }
 }
