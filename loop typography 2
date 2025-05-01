@@ -3,12 +3,12 @@ let points = [];
 let size = 0;
 
 function preload() {
-    font = loadFont("nhin-minh/assets/1. Font/DanhDa-Bold.otf");
+    font = loadFont("nhin-minh/assets/1. Font/IBMPlexMono-Medium.ttf");
 }
 
 function setup() {
     createCanvas(400, 400);
-    points = font.textToPoints("languised", 0, 10, 60, {
+    points = font.textToPoints("languised", 0, height/2, 200, {
         sampleFactor: 0.3,
         simplifyThresold: 0
     });
@@ -18,10 +18,10 @@ function draw() {
     background(0);
     for(let i=0; i<points.length; i=i+1) {
         let distance = dist(mouseX, mouseY, points[i].x, points[i].y);
-        size = map(dist, 0, 300, 80, 0);
+        size = map(dist, 0, 200, 80, 0);
 
         noStroke();
         fill(255);
-        rect(points[i].x, points[i].y, 20, 20);
+        circle(points[i].x, points[i].y, 20);
     }
 }
