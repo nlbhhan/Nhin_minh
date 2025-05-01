@@ -26,6 +26,4 @@ function draw() {
     //tại mỗi điểm của chữ thì vẽ 1 cái circle
         circle(points[i].x, points[i].y, size); //Để gọi toạ độ x, y ra thì array[].x và array[].y
     }
-
-    
 }
