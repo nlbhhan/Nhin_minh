@@ -4,7 +4,7 @@ let sizeX=0;
 let sizeY=0;
 
 function preload() {
-    font = loadFont("nhin-minh/assets/1. Font/Unbounded-Bold.ttf");
+    font = loadFont("nhin-minh/assets/1-Font/IBMPlexMono-Medium.ttf");
  }
 
 function setup() {
