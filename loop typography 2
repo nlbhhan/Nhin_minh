@@ -1,5 +1,27 @@
 let font;
+let points = [];
+let size = 0;
 
 function preload() {
-    
+    font = loadFont("nhin-minh/assets/1. Font/DanhDa-Bold.otf");
+}
+
+function setup() {
+    createCanvas(400, 400);
+    points = font.textToPoints("languised", 0, 10, 60, {
+        sampleFactor: 0.3,
+        simplifyThresold: 0
+    });
+}
+
+function draw() {
+    background(0);
+    for(let i=0; i<points.length; i=i+1) {
+        let distance = dist(mouseX, mouseY, points[i].x, points[i].y);
+        size = map(dist, 0, 300, 80, 0);
+
+        noStroke();
+        fill(255);
+        rect(points[i].x, points[i].y, 20, 20);
+    }
 }
