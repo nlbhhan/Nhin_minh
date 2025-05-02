@@ -23,8 +23,7 @@ function draw() {
     //Lặp ellipse để tạo cánh hoa
         for (let i=0; i<360; i=i+30) {
                 push();
-                rotate(30);
-
+                rotate(30); //Mỗi lần lặp thì cánh hoa xoay 30 độ
                 noStroke();
                 fill(canhHoa);
                 ellipse(0, y, 20, 70); //Ở đây dùng y -> tại mỗi vị trí y vẽ 1 ellipse, mỗi ellipse sẽ chuyển màu dần từ fill(from) đến fill(to)
