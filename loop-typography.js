@@ -55,7 +55,7 @@ function draw() {
         floatDisY = map(noise(j * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
         
         //Map size của hcm theo second(), giây càng tăng thì size càng bé
-        widthDis = map(second(), 0, 60, 30, 0);
+        widthDis = map(second(), 0, 60, 30, 10);
         heightDis = map(second(), 0, 60, 10, 0);
         
         // noFill();
