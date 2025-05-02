@@ -20,6 +20,12 @@ let floatGraX = 0;
 let floatGraY = 0;
 let widthGra;
 let heightGra;
+//TED
+let pointsTed = [];
+let floatTedX = 0;
+let floatTedY = 0;
+let widthTed;
+let heightTed;
 
 function preload() {
     font = loadFont("assets/1-Font/Unbounded-Bold.ttf");
@@ -44,6 +50,11 @@ function setup() {
     });
     //GRA
     pointsGra = font.textToPoints("GRA", -200, 150, 120, {
+        sampleFactor: 0.7,
+        simplifyThreshold: 0
+    });
+    //TED
+    pointsTed = font.textToPoints("TED", -200, 250, 120, {
         sampleFactor: 0.7,
         simplifyThreshold: 0
     });
@@ -114,7 +125,6 @@ function draw() {
 
 
     //Gra
-    //Inte giây càng tăng thì cục pixels fade dần
     push();
     translate(200, 200);
     for (let l=0; l<pointsGra.length; l=l+1) {
@@ -133,5 +143,27 @@ function draw() {
         fill(255, 178, 44);
         rect(pointsGra[l].x + floatGraX, pointsGra[l].y + floatGraY, widthGra, heightGra);
     }
+    pop();
+
+    //Ted
+    push();
+    translate(200, 200);
+    for (let m=0; m<pointsTed.length; m=m+1) {
+
+        //Hiệu ứng lơ lửng cho hình chữ nhật
+        floatTedX = map(noise(m * 0.5, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục X
+        floatTedY = map(noise(m * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
+        
+        //Map size của hcm theo second(), giây càng tăng thì size càng bé
+        widthTed = map(second(), 0, 60, 30, 10);
+        heightTed = map(second(), 0, 60, 10, 0);
+        
+        // noFill();
+        // strokeWeight(1);
+        noStroke();
+        fill(255, 178, 44);
+        rect(pointsTed[m].x + floatTedX, pointsTed[m].y + floatTedY, widthTed, heightTed);
+    }
+    pop();
 
 }
