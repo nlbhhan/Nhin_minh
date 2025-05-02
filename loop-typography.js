@@ -1,11 +1,12 @@
 let font;
 let pointsLanguished = []; 
-let pointsDisintegrated = [];
 let widthLang=0;
-let floatDisintegratedX=0;
-let floatDisintegratedY=0;
-let widthDisint;
-let heightDisint;
+
+let pointsDis = [];
+let floatDisX=0;
+let floatDisY=0;
+let widthDis;
+let heightDis;
 
 function preload() {
     font = loadFont("assets/1-Font/Unbounded-Bold.ttf");
@@ -18,8 +19,8 @@ function setup() {
         simplifyThreshold: 0.0001
     });
 
-    pointsDisintegrated = font.textToPoints("disintegrated", -190, 80, 50, {
-        sampleFactor: 0.3,
+    pointsDis = font.textToPoints("DIS", -230, -50, 200, {
+        sampleFactor: 0.7,
         simplyfyThreshold: 0
     });
 }
@@ -44,24 +45,24 @@ function draw() {
     }
     pop();
 
-    //Disintegrated, giây càng tăng thì cục pixels càng phân tán -> map vị trí x, y theo second
+    //Dis, giây càng tăng thì cục pixels càng phân tán -> map vị trí x, y theo second
     push();
     translate(200, 200);
-    for (let j=0; j<pointsDisintegrated.length; j=j+1) {
+    for (let j=0; j<pointsDis.length; j=j+1) {
 
         //Hiệu ứng lơ lửng cho hình chữ nhật
-        floatDisintegratedX = map(noise(j * 0.5, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục X
-        floatDisintegratedY = map(noise(j * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
+        floatDisX = map(noise(j * 0.5, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục X
+        floatDisY = map(noise(j * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
         
         //Map size của hcm theo second(), giây càng tăng thì size càng bé
-        widthDisint = map(second(), 0, 60, 30, 0);
-        heightDisint = map(second(), 0, 60, 10, 0);
+        widthDis = map(second(), 0, 60, 30, 0);
+        heightDis = map(second(), 0, 60, 10, 0);
         
         // noFill();
         // strokeWeight(1);
         noStroke();
         fill(255, 178, 44);
-        rect(pointsDisintegrated[j].x + floatDisintegratedX, pointsDisintegrated[j].y + floatDisintegratedY, widthDisint, heightDisint);
+        rect(pointsDis[j].x + floatDisX, pointsDis[j].y + floatDisY, widthDis, heightDis);
     }
     pop();
     
