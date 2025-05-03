@@ -16,8 +16,8 @@ function draw() {
     image(img, 0, 0);
 
     //Color picker
-    let c = img.get(mouseX-20, mouseY-20, 40, 40); //.get là lấy màu, lấy màu ngay tại vị trí con chuột
+    let c = img.get(mouseX-20, mouseY-20, 100, 100); //cắt hình
     imageMode(CORNER);
-    image(c, 300, 0, 100, 100);
+    image(c, 300, 0, 100, 100); //display hình c tại vị trí 300, 0 và hình díplay có size là W 100 và H 100
 
 }
