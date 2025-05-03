@@ -24,7 +24,7 @@ function veHoa(x,y) { //Khi thay ở dưới này là bằng x và y rồi thì 
 push();
 // translate(200, 200);
 translate(x,y); //Thay 200, 200 bằng x và y
-stroke(255);
+stroke("yellow");
 fill("magenta");
 
     // for(let i=0; i<360; i=i+30) {
