@@ -28,7 +28,7 @@ let widthTed;
 let heightTed;
 
 function preload() {
-    font = loadFont("assets/1-Font/Unbounded-Bold.ttf");
+    font = loadFont("assets/fonts/Unbounded-Bold.ttf");
  }
 
 function setup() {
