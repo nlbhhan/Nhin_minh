@@ -9,15 +9,15 @@ function setup() {
 }
 
 function draw() {
-    background(0);
+    background(200);
 
     //Hiển thị hình
     imageMode(CORNER);
     image(img, 0, 0);
 
     //Color picker
-    let c = img.get(mouseX-20, mouseY-20, mouseX+20, mouseY+20); //.get là lấy màu, lấy màu ngay tại vị trí con chuột
-    // console.log(c);
-    fill(c);
-    rect(300, 0, 100, height);
+    let c = img.get(mouseX-20, mouseY-20, 40, 40); //.get là lấy màu, lấy màu ngay tại vị trí con chuột
+    imageMode(CORNER);
+    image(c, 300, 0, 100, 100);
+
 }
