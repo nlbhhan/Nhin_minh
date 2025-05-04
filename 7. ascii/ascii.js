@@ -24,5 +24,5 @@ function draw() {
 
     img.updatePixels(); //Nhớ phải có bước này để hình hiển thị các thay đổi mình đã làm ở trên
     // console.log(img.pixels);
-    image(img, windowWidth/2, windowHeight/2);
+    image(img, 0, 0);
 }
