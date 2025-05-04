@@ -28,7 +28,7 @@ let widthTed;
 let heightTed;
 
 function preload() {
-    font = loadFont("assets/fonts/Unbounded-Bold.ttf");
+    font = loadFont("Unbounded-Bold.ttf");
  }
 
 function setup() {
@@ -87,8 +87,8 @@ function draw() {
     for (let j=0; j<pointsDis.length; j=j+1) {
 
         //Hiệu ứng lơ lửng cho hình chữ nhật
-        floatDisX = map(noise(j * 0.5, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục X
-        floatDisY = map(noise(j * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
+        floatDisX = map(noise(j * 0.5, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục X
+        floatDisY = map(noise(j * 0.5 + 100, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục Y
         
         //Map size của hcm theo second(), giây càng tăng thì size càng bé
         widthDis = map(second(), 0, 60, 30, 10);
@@ -108,8 +108,8 @@ function draw() {
     for (let k=0; k<pointsInt.length; k=k+1) {
 
         //Hiệu ứng lơ lửng cho hình chữ nhật
-        floatIntX = map(noise(k * 0.5, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục X
-        floatIntY = map(noise(k * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
+        floatIntX = map(noise(k * 0.5, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục X
+        floatIntY = map(noise(k * 0.5 + 100, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục Y
         
         //Map size của hcm theo second(), giây càng tăng thì size càng bé
         widthInt = map(second(), 0, 60, 30, 10);
@@ -130,8 +130,8 @@ function draw() {
     for (let l=0; l<pointsGra.length; l=l+1) {
 
         //Hiệu ứng lơ lửng cho hình chữ nhật
-        floatGraX = map(noise(l * 0.5, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục X
-        floatGraY = map(noise(l * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
+        floatGraX = map(noise(l * 0.5, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục X
+        floatGraY = map(noise(l * 0.5 + 100, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục Y
         
         //Map size của hcm theo second(), giây càng tăng thì size càng bé
         widthGra = map(second(), 0, 60, 30, 10);
@@ -151,8 +151,8 @@ function draw() {
     for (let m=0; m<pointsTed.length; m=m+1) {
 
         //Hiệu ứng lơ lửng cho hình chữ nhật
-        floatTedX = map(noise(m * 0.5, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục X
-        floatTedY = map(noise(m * 0.5 + 100, frameCount * 0.05), 0, 1, -2, 2); //Lơ lửng theo trục Y
+        floatTedX = map(noise(m * 0.5, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục X
+        floatTedY = map(noise(m * 0.5 + 100, frameCount * 0.05) * 5, 0, 1, -2, 2); //Lơ lửng theo trục Y
         
         //Map size của hcm theo second(), giây càng tăng thì size càng bé
         widthTed = map(second(), 0, 60, 30, 10);
