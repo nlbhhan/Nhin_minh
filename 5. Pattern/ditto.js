@@ -39,9 +39,9 @@ function draw() {
     textAlign(LEFT, TOP);
     textLeading(140);
     //Chuột càng xa thì chữ càng rõ
-    let distanceDitto = dist(mouseX, mouseY, 10, 150); //Khoảng cách từ chuột đến vị trí tâm của chữ
-    alphaValue = map(distanceDitto, 50, 200, 0, 255); //Opacity của chữ sẽ tỉ lệ với vị trí chuột, khoảng cách tới chuột = 0(tức càng gần chuột) thì chữ sẽ càng rõ
-    fill(255, 235, 0, alphaValue);
+    let distanceDitto = dist(mouseX, mouseY, width/2, 150); //Khoảng cách từ chuột đến vị trí tâm của chữ
+    alphaValue = map(distanceDitto, 0, 100, 255, 0); //Opacity của chữ sẽ tỉ lệ với vị trí chuột, khoảng cách tới chuột = 0(tức càng gần chuột) thì chữ sẽ càng rõ
+    fill(255, 255, 0, alphaValue);
     text("ditto", 50, 120, alphaValue);
     pop();
 
@@ -49,7 +49,8 @@ function draw() {
     //Draw Curtain 
     push();
     // noFill();
-    fill(235, 235, 223, 250);
+    fill(235, 235, 223, 100);
+    // fill(255, 255, 0, 250);
     noStroke();
     // strokeWeight(1); 
     // for(let j=0; j<height; j=j+50) {
