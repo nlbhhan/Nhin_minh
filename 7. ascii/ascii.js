@@ -6,7 +6,7 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    // img.resize(200, 200);
+    // img.resize(0, 200);
     noLoop();
 }
 
@@ -24,5 +24,5 @@ function draw() {
 
     img.updatePixels(); //Nhớ phải có bước này để hình hiển thị các thay đổi mình đã làm ở trên
     // console.log(img.pixels);
-    image(img, 0, 0);
+    image(img, windowWidth/2, windowHeight/2);
 }
