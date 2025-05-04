@@ -3,7 +3,7 @@ let spaceHoa = 100;
 
 
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(windowWidth, windowHeight);
     angleMode(DEGREES);
 }
 
@@ -11,14 +11,14 @@ function draw() {
     background("yellow");
     let angleHoa = 0;
 
-    for(let j=0; j<height/spaceHoa + 1; j=j+1) { //Lặp theo chiều dọc
-        for(let i=0; i<width/spaceHoa + 1; i=i+1) { //Lặp theo chiều ngang
+    for(let j=0; j<windowHeight/spaceHoa + 1; j=j+1) { //Lặp theo chiều dọc
+        for(let i=0; i<windowWidth/spaceHoa + 1; i=i+1) { //Lặp theo chiều ngang
             // angleHoa = angleHoa+30;
             push();
             translate(i*spaceHoa, j*spaceHoa);
             let distanceHoa = dist(mouseX, mouseY, i*spaceHoa, j*spaceHoa);
-            angleHoa = map(distanceHoa, 0, 100, 0, 360);
-            rotate(angleHoa);
+            scaleHoa = map(distanceHoa, 0, 80, 0.1, 0.5);
+            scale(scaleHoa);
             veHoa(i*spaceHoa, j*spaceHoa); //Thay vì thay số thì để thành chiều dài của canvas chia khoảng cách giữa các bông
             pop();
         } 
