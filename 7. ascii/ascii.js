@@ -25,7 +25,8 @@ function draw() {
 
     for (let i=0; i<img.height; i=i+1) {
         for (let j=0; j < img.width; j = j+1) {
-            idx=(i*width+j)*4;
+            idx=(i*width+j)*4; //Đi qua từng pixel
+            
             //Tính độ sáng trung bình của hình, coi pixel ngay chỗ đó nó sáng bao nhiêu 
             let r = img.pixels[idx]; //Red
             let g = img.pixels[idx+1]; //Green
