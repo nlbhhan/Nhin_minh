@@ -28,7 +28,7 @@ function draw() {
 
     // background texture
     push();
-    tint(255, 100);
+    tint(255, 100); //Chỉnh opacity bằng tint
     image(img, 0, -50);
     pop();
 
