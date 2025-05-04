@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-    background(38, 31, 179);
+    background(25, 18, 101);
     push();
     textSize(100);
     textFont(font);
@@ -26,8 +26,8 @@ function draw() {
 
     //Chuột càng xa thì chữ càng rõ
     let distanceDitto = dist(mouseX, mouseY, 200, 200); //Khoảng cách từ chuột đến vị trí tâm của chữ
-    alphaValue = map(distanceDitto, 0, 70, 255, 0); //Opacity của chữ sẽ tỉ lệ với vị trí chuột, khoảng cách tới chuột = 0(tức càng gần chuột) thì chữ sẽ càng mờ
-    fill(255, 255, 0, alphaValue);
+    alphaValue = map(distanceDitto, 0, 90, 255, 0); //Opacity của chữ sẽ tỉ lệ với vị trí chuột, khoảng cách tới chuột = 0(tức càng gần chuột) thì chữ sẽ càng mờ
+    fill(235, 235, 223, alphaValue);
     textAlign(LEFT, TOP);
     text("ditto", 15, 100, alphaValue);
     pop();
@@ -36,11 +36,11 @@ function draw() {
     //Draw Curtain 
     push();
     // noFill();
-    fill("yellow");
+    fill(235, 235, 223);
     noStroke();
     // strokeWeight(1); 
     // for(let j=0; j<height; j=j+50) {
-        for(let i=0; i<points.length; i=i+2) {
+        for(let i=0; i<points.length; i=i+10) {
         // yEllipse = map(second() * 2, 0, 60, 50, 100);
         let distance = dist(mouseX, mouseY, points[i].x, points[i].y);
         xEllipse = map(distance, 0, 50, 1, 0);
