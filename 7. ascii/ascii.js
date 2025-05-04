@@ -39,9 +39,10 @@ function draw() {
             let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu.length)); //Độ sáng chạy từ 0 đến 255, pixels chạy từ 0 đến length của chuoiKiTu
             let char = chuoiKiTu[charIndex]; //Có index rồi thì hiển thị nó ra
             textSize(5);
-            fill("red");
+            // fill("red");
+            fill(r, g, b); //Lấy pixels và hiển thị đúng màu ngay tại cục pixel đó
             noStroke();
-            text(char, j*5, i*5);   //Khúc này nhân lên cho 5 nên nó sẽ hiển thị vượt quá cái hình
+            text(char, j*2, i*2);   //Khúc này nhân lên cho 5 nên nó sẽ hiển thị vượt quá cái hình
         }
     }
 
