@@ -1,5 +1,6 @@
 let img;
-let chuoiKiTu = "     .:░▒▓█"; //String là một tập hợp các kí tự, tương tự như Array
+// let chuoiKiTu = "     .:░▒▓█"; //String là một tập hợp các kí tự, tương tự như Array
+let chuoiKiTu = ",,,,,,,,,,,,,,,,,,,HHHHHbsjka";
 
 function preload() {
     img = loadImage("3.jpg");
@@ -26,7 +27,7 @@ function draw() {
     for (let i=0; i<img.height; i=i+1) {
         for (let j=0; j < img.width; j = j+1) {
             idx=(i*width+j)*4; //Đi qua từng pixel
-            
+
             //Tính độ sáng trung bình của hình, coi pixel ngay chỗ đó nó sáng bao nhiêu 
             let r = img.pixels[idx]; //Red
             let g = img.pixels[idx+1]; //Green
@@ -38,9 +39,9 @@ function draw() {
             let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu.length)); //Độ sáng chạy từ 0 đến 255, pixels chạy từ 0 đến length của chuoiKiTu
             let char = chuoiKiTu[charIndex]; //Có index rồi thì hiển thị nó ra
             textSize(5);
-            fill(0);
+            fill("red");
             noStroke();
-            text(char, j*5, i*5);   
+            text(char, j*5, i*5);   //Khúc này nhân lên cho 5 nên nó sẽ hiển thị vượt quá cái hình
         }
     }
 
