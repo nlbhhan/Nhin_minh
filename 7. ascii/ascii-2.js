@@ -1,15 +1,15 @@
 let img;
-let font;
+// let font;
 let chuoiKiTu= "         BBBBBBBBBBB";
 
 function preload() {
-    img = loadImage("Imgs/IMG_1656-2.jpg");
-    font = loadFont("font/Spectral-ExtraLight.ttf");
+    img = loadImage("Imgs/3.jpg");
+    // font = loadFont("font/Spectral-ExtraLight.ttf");
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    img.resize(0, windowHeight);
+    createCanvas(400, 400);
+    // img.resize(0, 400);
     noLoop();
 }
 
@@ -25,8 +25,8 @@ function draw() {
 
             //Tính độ sáng trung bình của hình
             let r = img.pixels[idx]; //Red
-            let g = img.pixels[i+1]; //Green
-            let b = img.pixels[i+2]; //Blue
+            let g = img.pixels[idx+1]; //Green
+            let b = img.pixels[idx+2]; //Blue
 
             let avg = (r + g + b)/3;
 
@@ -35,11 +35,11 @@ function draw() {
             let char = chuoiKiTu[charIndex];
 
             textSize(5);
-            textFont(font);
-            textLeading(6);
-            fill(255);
+            // textFont(font);
+            // textLeading(6);
+            fill(r, g, b);
             noStroke();
-            text(char, j*2, i*2);
+            text(char, j, i);
         }
     }
     img.updatePixels();

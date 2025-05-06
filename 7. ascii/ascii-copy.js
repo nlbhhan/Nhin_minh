@@ -1,20 +1,22 @@
 let img;
-// let chuoiKiTu = "     .:░▒▓█"; //String là một tập hợp các kí tự, tương tự như Array
-let chuoiKiTu = ",,,,,,,,,,,,,,,,,,,HHHHHbsjka";
+let font;
+// let chuoiKiTu = "     .:░▒▓█"; 
+let chuoiKiTu= "           cccccCCCCCCBBBBBBBBBBB";
 
 function preload() {
-    img = loadImage("Imgs/3.jpg");
+    img = loadImage("Imgs/5.jpg");
+    font = loadFont("font/Spectral-ExtraLight.ttf");
 }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    // img.resize(0, 200);
+    img.resize(0, windowHeight);
     noLoop();
 }
 
 function draw() {
-    background(240);
-    image(img, 0, 0);
+    background(0);
+    // image(img, 0, 0);
     img.loadPixels(); 
 
         //Invert color
@@ -38,11 +40,13 @@ function draw() {
             //Bỏ dô int() để nó hiện thị số nguyên
             let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu.length)); //Độ sáng chạy từ 0 đến 255, pixels chạy từ 0 đến length của chuoiKiTu
             let char = chuoiKiTu[charIndex]; //Có index rồi thì hiển thị nó ra
-            textSize(5);
-            // fill("red");
-            fill(r, g, b); //Lấy pixels và hiển thị đúng màu ngay tại cục pixel đó
+            textSize(24);
+            textLeading(30);
+            textAlign(CENTER);
+            textFont(font);
+            fill(255); 
             noStroke();
-            text(char, j*2, i*2);   //Khúc này nhân lên cho 5 nên nó sẽ hiển thị vượt quá cái hình
+            text(char, j*10, i*10);   //Khúc này nhân lên cho 5 nên nó sẽ hiển thị vượt quá cái hình
         }
     }
 
