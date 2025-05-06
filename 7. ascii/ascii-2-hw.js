@@ -3,7 +3,7 @@ let font;
 let chuoiKiTu= "         BBBBBBBBBBB";
 
 function preload() {
-    img = loadImage("Imgs/IMG_1656-2.png");
+    img = loadImage("Imgs/IMG_1656-2.jpg");
     font = loadFont("font/Spectral-ExtraLight.ttf");
 }
 
