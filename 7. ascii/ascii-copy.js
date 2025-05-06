@@ -1,21 +1,23 @@
 let img;
 let font;
+let semiBold;
 // let chuoiKiTu = "     .:░▒▓█"; 
-let chuoiKiTu= "           cccccCCCCCCBBBBBBBBBBB";
+let chuoiKiTu= "DDDD_______       OOOOOOO       ____________";
 
 function preload() {
     img = loadImage("Imgs/5.jpg");
     font = loadFont("font/Spectral-ExtraLight.ttf");
+    semiBold = loadFont("font/Spectral-SemiBoldItalic.ttf");
 }
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    img.resize(0, windowHeight);
+    img.resize(500, 0);
     noLoop();
 }
 
 function draw() {
-    background(0);
+    background(248, 248, 255);
     // image(img, 0, 0);
     img.loadPixels(); 
 
@@ -40,13 +42,26 @@ function draw() {
             //Bỏ dô int() để nó hiện thị số nguyên
             let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu.length)); //Độ sáng chạy từ 0 đến 255, pixels chạy từ 0 đến length của chuoiKiTu
             let char = chuoiKiTu[charIndex]; //Có index rồi thì hiển thị nó ra
+
+            //First layer
             textSize(24);
-            textLeading(30);
+            textLeading(45);
             textAlign(CENTER);
             textFont(font);
-            fill(255); 
+            fill(255, 144, 187); 
             noStroke();
-            text(char, j*10, i*10);   //Khúc này nhân lên cho 5 nên nó sẽ hiển thị vượt quá cái hình
+            text(char, j*10, i*10);  
+
+            //Second layer
+            textSize(20);
+            textLeading(45);
+            textAlign(CENTER);
+            textFont(semiBold);
+            fill(78, 215, 241); 
+            noStroke();
+            text(char, j*15, i*15);  
+
+
         }
     }
 
