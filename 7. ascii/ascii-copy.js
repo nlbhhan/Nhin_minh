@@ -17,7 +17,7 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth,  windowHeight);
-    img.resize(500, 0);
+    img.resize(300, 0);
     noLoop();
 }
 
@@ -29,7 +29,7 @@ function draw() {
 
     for (let i=0; i<img.height; i=i+1) {
         for (let j=0; j < img.width; j = j+1) {
-            idx=(i*width+j)*4; //Đi qua từng pixel
+            idx=(i*300+j)*4; //Đi qua từng pixel của ảnh nên chỗ này phải là width của ảnh
 
             //Tính độ sáng trung bình của hình, coi pixel ngay chỗ đó nó sáng bao nhiêu 
             let r = img.pixels[idx]; //Red
@@ -46,14 +46,23 @@ function draw() {
             let char2 = chuoiKiTu2[charIndex2];
 
             //Third layer
+            tint(255, 240);
+            textSize(24);
+            textLeading(45);
+            textAlign(CENTER);
+            textFont(font);
+            fill(255); 
+            noStroke();
+            text(char, j*5, i*15);
+
+            //Second layer
             textSize(12);
             textLeading(60);
-            textAlign(TOP, LEFT);
+            textAlign(CENTER);
             textFont(soraExtraBold);
-            // fill(78, 215, 241); 
-            fill(255, 240);
+            fill(78, 215, 241); 
             noStroke();
-            text(charIndex2, width-j*20, i*10); 
+            text(char, j*10, i*20);  
 
             //First layer
             textSize(24);
@@ -64,15 +73,7 @@ function draw() {
             noStroke();
             text(char, j*10, i*15);  
 
-            //Second layer
-            textSize(12);
-            textLeading(60);
-            textAlign(CENTER);
-            textFont(soraExtraBold);
-            fill(78, 215, 241); 
-            noStroke();
-            text(char, width - j*4, i*20);  
-
+            
             
         }
     }
@@ -84,10 +85,10 @@ function draw() {
         textLeading(36);
         fill("white");
         noStroke();
-        text('To me, there is no better way', 200, 200);
-        text('to release my mind', 400, 236);
-        text('than to go do', 600, 272);
-        text('Photography and Videography.', 800, 308);
+        text('To me, there is no better way', 200, 500);
+        text('to release my mind', 400, 536);
+        text('than to go do', 600, 572);
+        text('Photography and Videography.', 280, 608);
 
 
     img.updatePixels(); //Nhớ phải có bước này để hình hiển thị các thay đổi mình đã làm ở trên
