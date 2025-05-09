@@ -46,7 +46,7 @@ function draw() {
             let charIndex2 = int(map(avg, 255, 0, chuoiKiTu2.length));
             let char2 = chuoiKiTu2[charIndex2];
             
-            //Second layer
+            //First layer
             push();
             translate(200, 0);
             textSize(12);
@@ -59,7 +59,7 @@ function draw() {
             text(char, j*10, i*5);  
             pop();
             
-            //Third layer
+            //Second layer
             textSize(24);
             textLeading(45);
             textAlign(CENTER);
