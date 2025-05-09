@@ -3,8 +3,8 @@ let font;
 let semiBold;
 let soraMedium;
 let soraExtraBold;
-// let chuoiKiTu = "     .:░▒▓█"; 
-let chuoiKiTu= "__________________###############";
+let chuoiKiTu = "     .:░▒▓█"; 
+// let chuoiKiTu= "__________________###############";
 let chuoiKiTu2 = "                _______________";
 
 function preload() {
@@ -16,8 +16,9 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth,  windowHeight);
+    createCanvas(1080,  windowHeight);
     img.resize(300, 0);
+    angleMode(DEGREES);
     noLoop();
 }
 
@@ -44,34 +45,50 @@ function draw() {
 
             let charIndex2 = int(map(avg, 255, 0, chuoiKiTu2.length));
             let char2 = chuoiKiTu2[charIndex2];
-
-            //Third layer
-            tint(255, 240);
-            textSize(24);
-            textLeading(45);
-            textAlign(CENTER);
-            textFont(font);
-            fill(255); 
-            noStroke();
-            text(char, j*5, i*15);
-
+            
             //Second layer
+            push();
+            translate(200, 0);
             textSize(12);
             textLeading(60);
             textAlign(CENTER);
             textFont(soraExtraBold);
-            fill(78, 215, 241); 
+            fill(255); 
             noStroke();
-            text(char, j*10, i*20);  
+            rotate(90);
+            text(char, j*10, i*5);  
+            pop();
+            
+            //Third layer
+            textSize(24);
+            textLeading(45);
+            textAlign(CENTER);
+            textFont(semiBold);
+            fill(5, 191, 219, 100); 
+            noStroke();
+            text(char, width-j*5, i*5); 
 
-            //First layer
+            //Third layer
             textSize(24);
             textLeading(45);
             textAlign(CENTER);
             textFont(font);
-            fill(255, 144, 187); 
+            fill(0, 255, 202, 200); 
             noStroke();
-            text(char, j*10, i*15);  
+            text(char, j*10, i*10);
+
+            
+
+            
+
+            // //First layer
+            // textSize(24);
+            // textLeading(45);
+            // textAlign(CENTER);
+            // textFont(font);
+            // fill(255, 144, 187); 
+            // noStroke();
+            // text(char, width-j*10, i*5);  
 
             
             
@@ -85,10 +102,12 @@ function draw() {
         textLeading(36);
         fill("white");
         noStroke();
-        text('To me, there is no better way', 200, 500);
+        text('To me, there is no better way', 100, 500);
         text('to release my mind', 400, 536);
-        text('than to go do', 600, 572);
-        text('Photography and Videography.', 280, 608);
+        text('than to go do', 250, 572);
+        // textAlign(TOP, RIGHT);
+        text('Photography', 650, 572);
+    
 
 
     img.updatePixels(); //Nhớ phải có bước này để hình hiển thị các thay đổi mình đã làm ở trên
