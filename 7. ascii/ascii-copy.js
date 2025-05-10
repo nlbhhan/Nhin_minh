@@ -3,9 +3,9 @@ let font;
 let semiBold;
 let soraMedium;
 let soraExtraBold;
-let chuoiKiTu = "     .:░▒▓█"; 
-// let chuoiKiTu= "__________________###############";
-let chuoiKiTu2 = "                _______________";
+// let chuoiKiTu = "     .:░▒▓█"; 
+let chuoiKiTu= "__________________###############";
+let chuoiKiTu2 = "     .:░▒▓█";
 
 function preload() {
     img = loadImage("Imgs/7.jpg");
@@ -24,13 +24,13 @@ function setup() {
 
 function draw() {
     // background(248, 248, 255);
-    background(0);
+    background("teal");
     // image(img, 0, 0);
     img.loadPixels(); 
 
     for (let i=0; i<img.height; i=i+1) {
         for (let j=0; j < img.width; j = j+1) {
-            idx=(i*300+j)*4; //Đi qua từng pixel của ảnh nên chỗ này phải là width của ảnh
+            idx=(i*img.width+j)*4; //Đi qua từng pixel của ảnh nên chỗ này phải là width của ảnh
 
             //Tính độ sáng trung bình của hình, coi pixel ngay chỗ đó nó sáng bao nhiêu 
             let r = img.pixels[idx]; //Red
@@ -46,36 +46,36 @@ function draw() {
             let charIndex2 = int(map(avg, 255, 0, chuoiKiTu2.length));
             let char2 = chuoiKiTu2[charIndex2];
             
-            //First layer
-            push();
-            translate(200, 0);
-            textSize(12);
-            textLeading(60);
-            textAlign(CENTER);
-            textFont(soraExtraBold);
-            fill(255); 
-            noStroke();
-            rotate(90);
-            text(char, j*10, i*5);  
-            pop();
+            // //First layer
+            // push();
+            // translate(200, 0);
+            // textSize(12);
+            // textLeading(60);
+            // textAlign(CENTER);
+            // textFont(soraExtraBold);
+            // fill(255); 
+            // noStroke();
+            // rotate(90);
+            // text(char, j*10, i*5);  
+            // pop();
             
             //Second layer
             textSize(24);
             textLeading(45);
             textAlign(CENTER);
             textFont(semiBold);
-            fill(5, 191, 219, 100); 
+            fill(5, 191, 219); 
             noStroke();
-            text(char, width-j*5, i*5); 
+            text(char, width-j*4, i*8); 
 
             //Third layer
             textSize(24);
             textLeading(45);
             textAlign(CENTER);
             textFont(font);
-            fill(0, 255, 202, 200); 
+            fill(255, 255, 255, 200); 
             noStroke();
-            text(char, j*10, i*10);
+            text(char, j*4, i*4);
 
             
 
@@ -106,7 +106,7 @@ function draw() {
         text('to release my mind', 400, 536);
         text('than to go do', 250, 572);
         // textAlign(TOP, RIGHT);
-        text('Photography', 650, 572);
+        text('Photography', 250, 608);
     
 
 
