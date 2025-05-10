@@ -60,22 +60,23 @@ function draw() {
             // pop();
             
             //Second layer
-            textSize(24);
-            textLeading(45);
-            textAlign(CENTER);
-            textFont(semiBold);
-            fill(5, 191, 219); 
-            noStroke();
-            text(char, width-j*4, i*8); 
+            // textSize(24);
+            // textLeading(45);
+            // textAlign(CENTER);
+            // textFont(semiBold);
+            // fill(5, 191, 219); 
+            // noStroke();
+            // text(char2, width-j*4, i*4); 
 
             //Third layer
+            //Feedback: chỉnh lại hình xuống 20-35, chỉnh text Size lại nhỏ xún
             textSize(24);
             textLeading(45);
             textAlign(CENTER);
             textFont(font);
             fill(255, 255, 255, 200); 
             noStroke();
-            text(char, j*4, i*4);
+            text(char, j*5, i*5);
 
             
 
