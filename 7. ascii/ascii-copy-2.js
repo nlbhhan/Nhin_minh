@@ -3,11 +3,17 @@ let font;
 let semiBold;
 let soraMedium;
 let soraExtraBold;
-// let chuoiKiTu = "     .:░▒▓█"; 
-let chuoiKiTu= "__________________@@@@@@@@@@@@@@@@@@###############";
+let symbol = "     .:░▒▓█"; 
+// let chuoiKiTu= "__________________$$$$$$$$$$";
 
 //Slider -Thiết lập thanh kéo
-let slider;
+let sliderSize;
+
+//Pick màu
+let colorPicker;
+
+//Text input
+let textInput;
 
 function preload() {
     img = loadImage("Imgs/8.jpg");
@@ -18,11 +24,24 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(1080,  windowHeight);
+    createCanvas(1080,  1080);
     angleMode(DEGREES);
-    slider = createSlider(10, 200, 10, 1); //min Text size, max text size, default là 10, và mỗi lần kéo thì cộng/trừ 1 đơn vị
-    slider.position(1, height/2);
-    // noLoop();
+
+    //Tạo Slider để tăng size cho chữ
+    sliderSize = createSlider(10, 100, 36, 1); //min Text size, max text size, default là 10, và mỗi lần kéo thì cộng/trừ 1 đơn vị
+    sliderSize.position(1, 1000);
+    sliderSize.size(100);
+
+    //Color picker
+    colorPicker = createColorPicker('deeppink');
+    colorPicker.position(1, 1020);
+    colorPicker.size(200, 40);
+
+    //Text input
+    textInput = createInput("     .:░▒▓█");
+    textInput.position(200, 1020);
+
+    // noLoop(); ////Dùng slider là không được xài noLoop
 }
 
 function draw() {
@@ -41,19 +60,19 @@ function draw() {
             let b = img.pixels[idx+2]; //Blue
             let avg = (r+g+b)/3;
 
-            //Hiện thị index theo độ sáng của hình
-            //Bỏ dô int() để nó hiện thị số nguyên
-            let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu.length)); //Độ sáng chạy từ 0 đến 255, pixels chạy từ 0 đến length của chuoiKiTu
-            let char = chuoiKiTu[charIndex]; //Có index rồi thì hiển thị nó ra
-            
+            let idxSymbol = int(map(avg, 0, 255, 0, textInput.value().length)); //Thay đổi nguyên chuỗi đầu bằng chuỗi mới
+            let chuoiKyTu = textInput.value()[idxSymbol];
+
+            // console.log(chuoiKyTu);
+
             //Third layer
-            textSize(slider.value());
+            textSize(sliderSize.value());
             textLeading(45);
             textAlign(CENTER);
-            textFont(font);
-            fill(r+50, g-30, b+20); 
+            // textFont(font);
+            fill(colorPicker.value()); 
             noStroke();
-            text(char, j*10, i*10);
+            text(chuoiKyTu, j*20, i*20);
             
             
         }
