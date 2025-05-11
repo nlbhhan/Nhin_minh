@@ -1,15 +1,24 @@
 let img;
 let font;
-let chuoiKiTu = "_______________##############";
+let chuoiKiTu = "_____________################";
+
+
+//Thêm slider
+let slider;
 
 function preload() {
     font = loadFont ("font/Sora-Medium.ttf");
-    img = loadImage("Imgs/9.jpg");
+    img = loadImage("Imgs/10.jpg");
 }
 
 function setup() {
     createCanvas(700, 1050);
-    noLoop();
+    // noLoop();
+
+    //Tạo slider để tăng size cho chữ
+    slider = createSlider(5, 72, 10, 1); 
+    slider.position(750, 200);
+    slider.size(100);
 }
 
 function draw() {
@@ -31,10 +40,10 @@ function draw() {
             let charIndex = int(map(grayScale, 0, 255, 0, chuoiKiTu.length));
             let char = chuoiKiTu[charIndex];
 
-            textSize(12);
-            textFont(font);
+            textSize(slider.value());
+            // textFont(font);
             textLeading(14);
-            fill(r,g,b);
+            fill(r-20,g,b);
             noStroke();
             text(char, j*7, i*7);
         }

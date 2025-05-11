@@ -28,7 +28,7 @@ function setup() {
     angleMode(DEGREES);
 
     //Tạo Slider để tăng size cho chữ
-    sliderSize = createSlider(10, 100, 36, 1); //min Text size, max text size, default là 10, và mỗi lần kéo thì cộng/trừ 1 đơn vị
+    sliderSize = createSlider(10, 100, 36, 1); //min Text size, max text size, default là 36, và mỗi lần kéo thì cộng/trừ 1 đơn vị
     sliderSize.position(1, 1000);
     sliderSize.size(100);
 
