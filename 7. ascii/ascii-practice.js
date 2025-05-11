@@ -71,8 +71,9 @@ function draw() {
 
      //Text
     push();
-    textSize(180);
-    textLeading(110);
+    // textSize(180);
+    textSize(slider.value());
+    textLeading(50);
     textFont(font);
     // fill(155, 126, 189);
     fill(255);
