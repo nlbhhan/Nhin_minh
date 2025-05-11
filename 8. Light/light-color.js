@@ -1,4 +1,5 @@
 let video;
+let redTarget, greenTarget, blueTarget;
 let threshold = 200 ; //Cái ngưỡng
 let slider;
 
@@ -7,7 +8,12 @@ function setup() {
     pixelDensity(1);  //1 pixel trên webcam đến lúc display thì nó sẽ không thay đổi, tỉ lệ 1:1
     video = createCapture(VIDEO);
     video.hide();
-    slider = createSlider(200, 255, 200, 5);
+    slider = createSlider(0, 255, 200, 5);
+
+    redTarget = 130;
+    greenTarget = 90;
+    blueTarget = 70;
+
 }
 
 function draw() {
@@ -15,7 +21,6 @@ function draw() {
     image(video, 0, 0, 800, 600);
     video.loadPixels();
 
-    
     let sumX = 0;
     let sumY = 0;
     //Đếm vùng sáng có bao nhiêu pixel
@@ -32,10 +37,11 @@ function draw() {
             let b = video.pixels[idx+2];
             let avg = (r+g+b)/3;
 
-            if (avg>threshold) {
-                count = count +1; 
-                sumX = sumX + j; //Cộng theo hàng ngang
-                sumY = sumY + i; //Cộng theo hàng dọc
+            let distance = (r,g,b, redTarget, greenTarget, blueTarget);
+            if (distance<threshold) {
+                count = count+1;
+                sumX = sumX + j;
+                sumY = sumY +i;
             }
         }
     }
