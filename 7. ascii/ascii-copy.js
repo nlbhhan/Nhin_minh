@@ -42,9 +42,6 @@ function draw() {
             //Bỏ dô int() để nó hiện thị số nguyên
             let charIndex = int(map(avg, 0, 255, 0, chuoiKiTu.length)); //Độ sáng chạy từ 0 đến 255, pixels chạy từ 0 đến length của chuoiKiTu
             let char = chuoiKiTu[charIndex]; //Có index rồi thì hiển thị nó ra
-
-            let charIndex2 = int(map(avg, 255, 0, chuoiKiTu2.length));
-            let char2 = chuoiKiTu2[charIndex2];
             
             // //First layer
             // push();
